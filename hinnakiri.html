@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1ec">
+  <meta name="description" content="Marie ilutoa näidishinnakiri.">
+  <title>Hinnakiri — Marie ilutuba</title>
+  <style>
+    :root {
+      --ink: #292521;
+      --muted: #716961;
+      --rose: #a76f68;
+      --paper: #f6f1ec;
+      --white: #fffdfa;
+      --line: #ded5cc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    .page { width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    a { color: inherit; }
+
+    .brand {
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 2rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .back { color: var(--rose); text-underline-offset: 4px; }
+
+    main { padding: 64px 0 76px; }
+
+    .eyebrow {
+      color: var(--rose);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: Georgia, serif;
+      font-size: clamp(2.4rem, 7vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .subtle, .note { color: var(--muted); }
+
+    .menu {
+      margin-top: 32px;
+      padding: clamp(22px, 5vw, 40px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    h2 {
+      margin: 28px 0 8px;
+      font-family: Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 13px 0;
+      border-bottom: 1px solid #eee8e2;
+    }
+
+    .price-row span:last-child {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .note { margin: 22px 0 0; font-size: .88rem; }
+
+    footer {
+      padding: 24px 0 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      header { align-items: flex-start; flex-direction: column; }
+      main { padding-top: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="index.html">Marie ilutuba</a>
+      <a class="back" href="index.html">← Tagasi avalehele</a>
+    </header>
+    <main>
+      <p class="eyebrow">Ilurituaalid ja hoolitsused</p>
+      <h1>Hinnakiri</h1>
+      <p class="subtle">Vali endale sobiv väike ilupaus.</p>
+      <section class="menu" aria-label="Teenuste hinnad">
+        <h2>Küüned</h2>
+        <div class="price-row"><span>Klassikaline maniküür</span><span>25 €</span></div>
+        <div class="price-row"><span>Geellakk</span><span>35 €</span></div>
+        <div class="price-row"><span>Geellaki eemaldus ja hooldus</span><span>40 €</span></div>
+        <h2>Kulmud ja ripsmed</h2>
+        <div class="price-row"><span>Kulmude korrigeerimine</span><span>18 €</span></div>
+        <div class="price-row"><span>Kulmude värvimine ja korrigeerimine</span><span>25 €</span></div>
+        <div class="price-row"><span>Ripsmete värvimine</span><span>15 €</span></div>
+        <p class="note">Teenused ja hinnad on väljamõeldud näidisandmed.</p>
+      </section>
+    </main>
+    <footer>Marie ilutuba · Näidisveebileht</footer>
+  </div>
+</body>
+</html>

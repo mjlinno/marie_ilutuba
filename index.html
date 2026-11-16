@@ -1,1 +1,406 @@
-wadawdad 2
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1ec">
+  <meta name="description" content="Marie ilutuba – küüned, kulmud ja väikesed ilurituaalid Tartus.">
+  <title>Marie ilutuba — ilu sinu moodi</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #292521;
+      --muted: #716961;
+      --rose: #a76f68;
+      --paper: #f6f1ec;
+      --white: #fffdfa;
+      --line: #ded5cc;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-content {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    nav, .socials { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+
+    nav a, .social-icon {
+      padding: 9px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    nav a:hover, nav a:focus-visible, .social-icon[href]:hover, .social-icon[href]:focus-visible {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .social-icon {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      place-items: center;
+      font-weight: 600;
+    }
+
+    .social-icon[aria-disabled="true"] { color: var(--muted); }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 56px;
+      padding: 76px 0 64px;
+    }
+
+    .eyebrow {
+      color: var(--rose);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, p { margin-top: 0; }
+
+    h1 {
+      max-width: 600px;
+      margin-bottom: 20px;
+      font-family: Georgia, serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .intro-copy {
+      max-width: 500px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .intro-art {
+      display: grid;
+      min-height: 340px;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 48% 48% 12px 12px;
+      background:
+        radial-gradient(ellipse at 50% 34%, #f9e4dc 0 16%, transparent 16.5%),
+        radial-gradient(ellipse at 50% 58%, #d7a99a 0 26%, transparent 26.5%),
+        radial-gradient(ellipse at 40% 73%, #b78377 0 26%, transparent 26.5%),
+        linear-gradient(145deg, #e8d9cb, #f7e9df 58%, #c9a99a);
+    }
+
+    .intro-art span {
+      padding: 10px 18px;
+      border: 1px solid rgb(255 253 250 / 75%);
+      border-radius: 999px;
+      background: rgb(255 253 250 / 76%);
+      color: #59463f;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      padding: 28px 0 76px;
+    }
+
+    .gallery-section { padding: 8px 0 24px; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .gallery-card {
+      position: relative;
+      display: grid;
+      min-height: 210px;
+      overflow: hidden;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .gallery-card:first-child { min-height: 300px; }
+
+    .gallery-card svg { width: 100%; height: 100%; min-height: inherit; }
+
+    .gallery-card figcaption {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgb(255 253 250 / 85%);
+      color: var(--ink);
+      font-size: .85rem;
+      text-align: center;
+    }
+
+    .panel {
+      padding: clamp(24px, 4vw, 40px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    h2 {
+      margin-bottom: 8px;
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    .subtle { color: var(--muted); }
+
+    address {
+      margin: 20px 0;
+      font-style: normal;
+      font-size: 1.05rem;
+    }
+
+    .hours {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .95rem;
+    }
+
+    .hours td {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee8e2;
+    }
+
+    .hours td:last-child {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .closed { color: var(--muted); }
+
+    .map {
+      display: block;
+      width: 100%;
+      min-height: 300px;
+      border: 0;
+      border-radius: 5px;
+      background: #e9e2da;
+    }
+
+    .directions {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--rose);
+      font-weight: 600;
+      text-underline-offset: 4px;
+    }
+
+    .notice {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    footer {
+      padding: 24px 0 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .page { width: min(100% - 32px, 560px); }
+      header { align-items: flex-start; flex-direction: column; }
+      .header-content { width: 100%; align-items: flex-start; flex-direction: column; }
+      nav { gap: 7px; }
+      nav a { padding: 8px 12px; }
+      .intro { grid-template-columns: 1fr; gap: 28px; padding: 52px 0 38px; }
+      .intro-art { min-height: 260px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-card:first-child { grid-column: 1 / -1; min-height: 260px; }
+      .details { grid-template-columns: 1fr; padding-bottom: 52px; }
+    }
+
+    @media (max-width: 420px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-card:first-child { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="#" aria-label="Marie ilutuba, avaleht">Marie ilutuba</a>
+      <div class="header-content">
+        <nav aria-label="Põhinavigatsioon">
+          <a href="hinnakiri.html">Hinnakiri</a>
+          <a href="broneerimine.html">Broneeri aeg</a>
+          <a href="#galerii">Galerii</a>
+        </nav>
+        <div class="socials" aria-label="Sotsiaalmeedia">
+          <span class="social-icon" aria-label="Instagram, link peagi tulekul" aria-disabled="true">IG</span>
+          <span class="social-icon" aria-label="Facebook, link peagi tulekul" aria-disabled="true">f</span>
+          <a class="social-icon" href="https://www.tumblr.com/" target="_blank" rel="noopener noreferrer" aria-label="Tumblr (näidislink)">t</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" id="teenused">
+        <div>
+          <p class="eyebrow">Sinu väike ilupaus Tartus</p>
+          <h1>Ilu sinu moodi.</h1>
+          <p class="intro-copy">Hubane ilutuba, kus saad aja maha võtta ja lasta end hellitada. Küüned, kulmud ja hea tunne — kõik ühe katuse all.</p>
+        </div>
+        <div class="intro-art" role="img" aria-label="Soe ja pehme tooniga ilutoa kujundus">
+          <span>Võta hetk iseendale</span>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="galerii" aria-labelledby="gallery-title">
+        <p class="eyebrow">Väikesed ilurituaalid</p>
+        <h2 id="gallery-title">Galerii</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <svg viewBox="0 0 600 420" role="img" aria-labelledby="gallery-nails-title">
+              <title id="gallery-nails-title">Pastelsetes toonides maniküür</title>
+              <defs>
+                <linearGradient id="nail-bg" x2="1" y2="1"><stop stop-color="#f2d9cf"/><stop offset="1" stop-color="#d8b8ac"/></linearGradient>
+              </defs>
+              <rect width="600" height="420" fill="url(#nail-bg)"/>
+              <circle cx="488" cy="82" r="115" fill="#f8e9df" opacity=".7"/>
+              <path d="M75 366c58-80 95-178 167-213 49-24 112 8 153 50 51 51 93 98 133 163-74 35-156 48-238 43-82-5-153-18-215-43Z" fill="#c88f83"/>
+              <path d="M179 243c-4-43 13-84 37-87 25-2 42 39 44 82 2 32-8 49-37 51-28 2-41-12-44-46Zm93-22c-4-42 14-79 38-79 24 1 39 38 39 79 0 32-10 48-38 48s-36-15-39-48Zm91 25c-1-40 16-76 39-74 23 2 36 39 33 78-2 30-13 44-39 42-27-2-32-16-33-46Z" fill="#f7e9e3" stroke="#a76f68" stroke-width="6"/>
+              <path d="M198 204c1-21 8-34 19-35 12 0 19 14 23 35Zm91-22c4-19 11-31 22-31 11 1 18 14 21 32Zm91 24c4-18 12-29 22-28 11 1 16 15 16 32Z" fill="#b86f70"/>
+              <path d="M120 328c90-44 166-55 250-43" fill="none" stroke="#f4d8c8" stroke-linecap="round" stroke-width="11"/>
+            </svg>
+            <figcaption>Õrn pastelne maniküür</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <svg viewBox="0 0 420 300" role="img" aria-labelledby="gallery-brows-title">
+              <title id="gallery-brows-title">Lillede ja iluhoolduse inspiratsioon</title>
+              <defs><linearGradient id="brow-bg" x2="1" y2="1"><stop stop-color="#e7d5c9"/><stop offset="1" stop-color="#f7e8df"/></linearGradient></defs>
+              <rect width="420" height="300" fill="url(#brow-bg)"/>
+              <circle cx="210" cy="151" r="92" fill="#fff8f1" opacity=".72"/>
+              <path d="M211 223c-3-69 1-119 5-166m-5 116c-35-36-61-49-91-55m91 96c31-43 59-58 91-70" fill="none" stroke="#708365" stroke-linecap="round" stroke-width="8"/>
+              <g fill="#c78689"><circle cx="125" cy="116" r="16"/><circle cx="156" cy="101" r="16"/><circle cx="143" cy="135" r="16"/><circle cx="294" cy="111" r="16"/><circle cx="322" cy="96" r="16"/><circle cx="318" cy="131" r="16"/></g>
+              <g fill="#ead194"><circle cx="141" cy="117" r="7"/><circle cx="311" cy="112" r="7"/></g>
+              <path d="M90 254h240" stroke="#c7aa98" stroke-linecap="round" stroke-width="3"/>
+            </svg>
+            <figcaption>Loomulik ja särav</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <svg viewBox="0 0 420 300" role="img" aria-labelledby="gallery-care-title">
+              <title id="gallery-care-title">Küünelakid ja ilutooted</title>
+              <defs><linearGradient id="care-bg" x2="0" y2="1"><stop stop-color="#f3e5dc"/><stop offset="1" stop-color="#d8b8a9"/></linearGradient></defs>
+              <rect width="420" height="300" fill="url(#care-bg)"/>
+              <ellipse cx="211" cy="239" rx="157" ry="25" fill="#ad8375" opacity=".28"/>
+              <rect x="92" y="144" width="72" height="91" rx="19" fill="#b97879"/>
+              <rect x="109" y="111" width="38" height="43" rx="6" fill="#544441"/>
+              <rect x="183" y="124" width="68" height="111" rx="18" fill="#e1b09c"/>
+              <rect x="198" y="89" width="38" height="46" rx="6" fill="#68564d"/>
+              <rect x="269" y="154" width="61" height="81" rx="18" fill="#d8c3a0"/>
+              <rect x="282" y="124" width="35" height="38" rx="5" fill="#544441"/>
+              <path d="M105 188h46m48-22h44m-58 23h72" stroke="#fff1e8" stroke-linecap="round" stroke-width="5" opacity=".75"/>
+            </svg>
+            <figcaption>Väikesed hetked iseendale</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="details" aria-label="Ilutoa asukoht ja lahtiolekuajad">
+        <div class="panel" id="asukoht">
+          <p class="eyebrow">Leia meid</p>
+          <h2>Asukoht</h2>
+          <address>
+            Rüütli tn 16<br>
+            51007 Tartu, Eesti
+          </address>
+          <iframe
+            class="map"
+            title="Google Maps kaart: Marie ilutoa näidisaadress Tartus"
+            src="https://maps.google.com/maps?q=R%C3%BC%C3%BCtli%20tn%2016%2C%20Tartu%2C%20Eesti&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+          <a class="directions" href="https://www.google.com/maps/search/?api=1&amp;query=R%C3%BC%C3%BCtli%20tn%2016%2C%20Tartu%2C%20Eesti" target="_blank" rel="noopener noreferrer">Ava Google Mapsis →</a>
+          <p class="notice">Aadress ja salong on väljamõeldud näidisandmed.</p>
+        </div>
+
+        <div class="panel" id="ajad">
+          <p class="eyebrow">Oleme sinu jaoks olemas</p>
+          <h2>Lahtiolekuajad</h2>
+          <p class="subtle">Broneeri endale sobiv aeg ja tule läbi.</p>
+          <table class="hours">
+            <tbody>
+              <tr><td>Esmaspäev</td><td>10.00–18.00</td></tr>
+              <tr><td>Teisipäev</td><td>10.00–18.00</td></tr>
+              <tr><td>Kolmapäev</td><td>10.00–18.00</td></tr>
+              <tr><td>Neljapäev</td><td>10.00–19.00</td></tr>
+              <tr><td>Reede</td><td>10.00–18.00</td></tr>
+              <tr><td>Laupäev</td><td>10.00–15.00</td></tr>
+              <tr><td>Pühapäev</td><td class="closed">Suletud</td></tr>
+            </tbody>
+          </table>
+          <p class="notice">Lahtiolekuajad on samuti näidisandmed.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>Marie ilutuba · Näidisveebileht</footer>
+  </div>
+</body>
+</html>

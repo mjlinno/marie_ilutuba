@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1ec">
+  <title>Broneeri aeg — Marie ilutuba</title>
+  <style>
+    :root {
+      --ink: #292521;
+      --muted: #716961;
+      --rose: #a76f68;
+      --paper: #f6f1ec;
+      --white: #fffdfa;
+      --line: #ded5cc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      display: grid;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+      place-items: center;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    main {
+      width: min(540px, 100%);
+      padding: clamp(28px, 7vw, 56px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .brand {
+      color: var(--ink);
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 2.5rem;
+      text-decoration: none;
+    }
+
+    h1 {
+      margin: 24px 0 12px;
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    p { color: var(--muted); }
+
+    .back {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--rose);
+      text-underline-offset: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="brand" href="index.html">Marie ilutuba</a>
+    <h1>Broneerimine tuleb peagi</h1>
+    <p>Veebibroneerimine ei ole veel avatud. Täname kannatlikkuse eest!</p>
+    <a class="back" href="index.html">← Tagasi avalehele</a>
+  </main>
+</body>
+</html>
